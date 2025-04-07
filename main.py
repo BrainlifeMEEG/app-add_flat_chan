@@ -31,7 +31,7 @@ nu_info = mne.create_info(ch_names=[ch_name], sfreq=raw.info['sfreq'], ch_types=
 stim_raw = mne.io.RawArray(nu_data, nu_info)
 
 raw.load_data()
-raw.add_channels([stim_raw])
+raw.add_channels([stim_raw], force_update_info=True)
 # save the modified raw file
 raw.save(os.path.join('out_dir','raw.fif'), overwrite=True)
 

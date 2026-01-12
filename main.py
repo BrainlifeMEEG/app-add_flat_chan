@@ -8,11 +8,11 @@ recorded in the data, or for standardizing channel layouts across datasets.
 Input:
     - raw: Path to MNE raw data file (.fif format)
     - ch_name: Name for the new channel
-    - ch_type: Type of the new channel (e.g., 'stim', 'misc')
+    - ch_type: Type of the new channel (e.g., 'eeg', 'meg', 'stim', 'misc')
 
 Output:
     - out_dir/raw.fif: MNE raw data file with the new flat channel added
-    - out_dir/report.html: QC report with channel information
+    - out_report/report.html: QC report with channel information
     - product.json: Metadata with updated channel info
 """
 
@@ -45,7 +45,7 @@ from brainlife_utils import (
 setup_matplotlib_backend()
 
 # Ensure output directories exist
-ensure_output_dirs('out_dir')
+ensure_output_dirs('out_dir', 'out_report')
 
 # Load configuration
 config = load_config()
@@ -79,7 +79,7 @@ report.add_html(title='Channels', html=channel_info_html)
 
 # == SAVE DATA ==
 raw.save(os.path.join('out_dir', 'raw.fif'), overwrite=True)
-report.save(os.path.join('out_dir', 'report.html'), overwrite=True)
+report.save(os.path.join('out_report', 'report.html'), overwrite=True)
 
 # == CREATE PRODUCT JSON ==
 product_items = []

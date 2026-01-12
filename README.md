@@ -16,7 +16,7 @@ Adds artificial flat (zero-valued) channels to MNE raw data files. This app is u
 ## Outputs
 
 - **out_dir/raw.fif**: Modified raw data file with the new flat channel added
-- **out_dir/report.html**: QC report containing raw data summary and updated channel information
+- **out_report/report.html**: QC report containing raw data summary and updated channel information
 - **product.json**: Metadata with channel information and data summary
 
 ## Configuration Parameters
@@ -24,12 +24,12 @@ Adds artificial flat (zero-valued) channels to MNE raw data files. This app is u
 ### Required
 
 - `raw`: Path to the input MNE raw data file (`.fif` format)
-- `ch_name`: Name for the new flat channel (e.g., "STI 014", "STIM")
+- `ch_name`: Name for the new flat channel (e.g., "STI 014")
 - `ch_type`: Type of the new channel. Common types include:
   - `stim`: For stimulus/trigger channels
   - `misc`: For miscellaneous channels
-  - `eeg`: For EEG channels (if adding EEG data)
-  - `meg`: For MEG channels (if adding MEG data)
+  - `eeg`: For EEG channel
+  - `meg`: For MEG channel
 
 ## Usage
 

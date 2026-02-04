@@ -16,12 +16,13 @@ Output:
     - product.json: Metadata with updated channel info
 """
 
-# Copyright (c) 2020 brainlife.io
+# Copyright (c) 2026 brainlife.io
 #
 # This app adds flat channels to MNE raw data files.
 #
-# Author: Kami Salibayeva
-# Indiana University
+# Authors:
+# - Kami Salibayeva (https://github.com/KSalibay)
+# - Maximilien Chaumon (https://github.com/dnacombo)
 
 import sys
 import os

@@ -90,7 +90,7 @@ add_raw_info_to_product(product_items, raw)
 
 # Add information about the added channel
 msg = f"Added flat channel '{ch_name}' of type '{ch_type}'"
-add_info_to_product(product_items, msg)
+add_info_to_product(product_items, msg, msg_type='success')
 
 # Create the product.json file
 create_product_json(product_items)
